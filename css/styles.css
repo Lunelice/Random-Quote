@@ -1,0 +1,174 @@
+:root{
+--violet: #6466E9;
+--dark:#111729;
+--background: #20293A;
+--gray: #4A5567;
+--lightGray: #97A3B6;
+
+}
+
+
+
+
+
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add some styles for body*/
+body {
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: var(--dark);
+    color: var(--lightGray);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+    column-gap: 1.5rem;
+}
+
+/* ==== CARD ==== */
+
+.card{
+    background-color: var(--background);
+    background-image: url('../images/bg-image-random-quote.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right 0 bottom 0;
+    border-radius: 8px;
+    width: 60%;
+    
+    text-align: center;
+    padding: 2em
+}
+
+.author {
+    color:white;
+font-size: 1rem;
+}
+
+
+blockquote q{
+    font-size: 1.5rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}   
+
+blockquote p {
+    font-size: .625rem;
+    color: var(--violet);
+    border: var(--violet) 1px solid;
+    border-radius:  15px;
+    padding:.25em .5em;
+    margin: 1em .5em 2.5em
+}
+
+.controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+.btns-container{
+   margin-top: 1em;
+   gap:0;
+   display: flex;
+   cursor: pointer;
+}
+.btns-container img:hover{
+    transform: scale(.95);
+}
+
+.btns-container img:first-of-type{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border:  var(--background) 2px solid;
+    border-right: 1px;
+    transition: all .2s;
+    padding: .5em 1em;
+}
+.btns-container img:last-of-type{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border:  var(--background) 2px solid;
+    padding: .5em 1em;
+    transition: all .2s;
+}
+
+
+
+.tooltip {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%; /* Ajustez cette valeur pour positionner le tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+
+ /* ==== MEDIA QUERIES ==== */
+@media screen and (max-width: 720px) {
+   body{
+    padding:1em
+   }
+   .card{
+    width: 100%;
+   }
+
+  }
